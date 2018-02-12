@@ -18,14 +18,23 @@ export default {
 
   data() {
     return {
-      messages: ['guillaume', 'zfezfezfze', 'zefefzefefz'],
+      messages: ['Le bon chat'],
       message: '',
     };
   },
 
+  sockets: {
+    connect() {
+      console.log('Connection au serveur reussi');
+    },
+    message(message){
+      this.messages.push(message)
+    },
+  },
+
   methods: {
     plop() {
-      this.messages.push(this.message);
+      this.$socket.emit('message', this.message);
       this.message = '';
     },
   },
