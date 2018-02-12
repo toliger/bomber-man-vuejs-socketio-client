@@ -1,0 +1,50 @@
+<template>
+  <div class="jeu">
+    <div> le bon message : {{ message }}</div>
+    <h1> Bomber Man </h1>
+    <div class="chat">
+      <div class="messages" v-chat-scroll>
+        <p v-for="m in messages" :key="m.id"> {{ m }}</p>
+      </div>
+      <input id="chat_input" v-model="message" @keyup.enter="plop">
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'HelloWorld',
+
+  data() {
+    return {
+      messages: ['guillaume', 'zfezfezfze', 'zefefzefefz'],
+      message: '',
+    };
+  },
+
+  methods: {
+    plop() {
+      this.messages.push(this.message);
+      this.message = '';
+    },
+  },
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+.jeu{
+  .chat{
+    .messages{
+      border: 1px solid black;
+      height: 20vh;
+      overflow: scroll;
+    }
+
+    input{
+      width: 100vw;
+    }
+  }
+}
+</style>
