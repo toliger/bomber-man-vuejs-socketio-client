@@ -5,7 +5,7 @@
       <input v-model="user.name">
     </div>
     <div> le bon message : {{ message }}</div>
-    <h1> Bomber Man </h1>
+    <h1> Bomber Woman </h1>
     <div class="chat">
       <div class="messages" v-chat-scroll>
         <p v-for="m in messages" :key="m.id"> {{ m.user }} {{ m.message }}</p>
