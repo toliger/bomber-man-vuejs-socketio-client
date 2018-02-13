@@ -34,13 +34,13 @@ export default {
     connect() {
     },
     message(message) {
-      this.messages.push({ user: this.user.name, message });
+      this.messages.push(message);
     },
   },
 
   methods: {
     plop() {
-      this.$socket.emit('message', this.message);
+      this.$socket.emit('message', { user: this.user.name, message: this.message });
       this.message = '';
     },
   },
