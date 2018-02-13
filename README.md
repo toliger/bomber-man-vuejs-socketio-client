@@ -1,6 +1,6 @@
 # bomber-man-socketio
 
-> A Vue.js project
+> A Vue.js/ socketIO bomberman
 
 ## Build Setup
 
