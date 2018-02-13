@@ -5,12 +5,12 @@
       <input v-model="user.name">
     </div>
     <div> le bon message : {{ message }}</div>
-    <h1> Bomber Woman </h1>
+    <h1> Bomber Man </h1>
     <div class="chat">
       <div class="messages" v-chat-scroll>
         <p v-for="m in messages" :key="m.id"> {{ m.user }} {{ m.message }}</p>
       </div>
-      <input id="chat_input" v-model="message" @keyup.enter="plop">
+      <input id="chat_input" v-model="message" @keyup.enter="newMessage">
     </div>
   </div>
 </template>
@@ -18,7 +18,6 @@
 <script>
 
 export default {
-  name: 'HelloWorld',
 
   data() {
     return {
@@ -39,7 +38,7 @@ export default {
   },
 
   methods: {
-    plop() {
+    newMessage() {
       this.$socket.emit('message', { user: this.user.name, message: this.message });
       this.message = '';
     },
