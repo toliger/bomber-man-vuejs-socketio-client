@@ -16,7 +16,7 @@
       <div class="input-group mb-3">
         <input id="chat_input" class="form-control" type="text" v-model="message" @keyup.enter="newMessage">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" v-on:click="plop">Button</button>
+          <button class="btn btn-outline-secondary" type="button" v-on:click="newMessage">Button</button>
         </div>
       </div>
     </div>
