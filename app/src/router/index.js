@@ -6,7 +6,7 @@ import VueSocketio from 'vue-socket.io';
 
 Vue.use(Router);
 Vue.use(VueChatScroll);
-Vue.use(VueSocketio, process.env.SOCKETIO || 'http://localhost:8081');
+Vue.use(VueSocketio, 'https://bombermanapi.oligertimothee.fr/');
 
 export default new Router({
   mode: 'history',
