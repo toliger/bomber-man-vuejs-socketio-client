@@ -51,15 +51,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .jeu{
+  width: 100vw;
   .chat{
+    width: 90vw;
+    margin: auto;
     .messages{
       border: 1px solid black;
       height: 20vh;
       overflow: scroll;
+      padding: 10px;
+      margin: 0px 0px 5px 0px;
     }
 
     input{
-      width: 100vw;
+      width:90vw;
+      padding: 5px;
     }
   }
 }
