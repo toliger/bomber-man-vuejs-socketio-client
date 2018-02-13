@@ -1,16 +1,24 @@
 <template>
   <div class="jeu">
     <div class="form-group row">
-      <label> pseudo :</label>
-      <input v-model="user.name">
+      <div class="input-group mb-3 pseudo">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Pseudo</span>
+        </div>
+        <input v-model="user.name" class="form-control" placeholder="Username">
+      </div>
     </div>
-    <div> le bon message : {{ message }}</div>
     <h1> Bomber Man </h1>
     <div class="chat">
       <div class="messages" v-chat-scroll>
-        <p v-for="m in messages" :key="m.id"> {{ m.user }} {{ m.message }}</p>
+        <p v-for="m in messages" :key="m.id"> <span id="user">{{ m.user }} : </span> {{ m.message }}</p>
       </div>
-      <input id="chat_input" v-model="message" @keyup.enter="plop">
+      <div class="input-group mb-3">
+        <input id="chat_input" class="form-control" type="text" v-model="message" @keyup.enter="plop">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" v-on:click="plop">Button</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,6 +59,11 @@ export default {
 <style scoped lang="less">
 .jeu{
   width: 100vw;
+  .pseudo{
+    width: 30vw;
+    margin-left: 2.5vw;
+  }
+
   .chat{
     width: 90vw;
     margin: auto;
@@ -60,10 +73,17 @@ export default {
       overflow: scroll;
       padding: 10px;
       margin: 0px 0px 5px 0px;
+
+      p{
+        text-align: left;
+      }
+
+      #user{
+        font-weight: bold;
+      }
     }
 
     input{
-      width:90vw;
       padding: 5px;
     }
   }
