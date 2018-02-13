@@ -14,7 +14,7 @@
         <p v-for="m in messages" :key="m.id"> <span id="user">{{ m.user }} : </span> {{ m.message }}</p>
       </div>
       <div class="input-group mb-3">
-        <input id="chat_input" class="form-control" type="text" v-model="message" @keyup.enter="plop">
+        <input id="chat_input" class="form-control" type="text" v-model="message" @keyup.enter="newMessage">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" v-on:click="plop">Button</button>
         </div>
@@ -26,7 +26,6 @@
 <script>
 
 export default {
-  name: 'HelloWorld',
 
   data() {
     return {
@@ -47,7 +46,7 @@ export default {
   },
 
   methods: {
-    plop() {
+    newMessage() {
       this.$socket.emit('message', { user: this.user.name, message: this.message });
       this.message = '';
     },
