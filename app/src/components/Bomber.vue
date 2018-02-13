@@ -25,17 +25,16 @@ export default {
       messages: ['Le bon chat'],
       message: '',
       user: {
-        name : 'Jean Eude'
-      }
+        name: 'Jean Eude',
+      },
     };
   },
 
   sockets: {
     connect() {
-      console.log('Connection au serveur reussi');
     },
     message(message) {
-      this.messages.push({user: this.user.name, message: message});
+      this.messages.push({ user: this.user.name, message });
     },
   },
 
