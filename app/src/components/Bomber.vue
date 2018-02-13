@@ -1,5 +1,15 @@
 <template>
   <div class="jeu">
+    <div class="form-group row">
+      <div class="input-field col s6">
+        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+        <label for="first_name">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <a class="waves-effect waves-light btn">button</a>
+        <label for="last_name">Last Name</label>
+      </div>
+    </div>
     <div> le bon message : {{ message }}</div>
     <h1> Bomber Man </h1>
     <div class="chat">
@@ -27,8 +37,8 @@ export default {
     connect() {
       console.log('Connection au serveur reussi');
     },
-    message(message){
-      this.messages.push(message)
+    message(message) {
+      this.messages.push(message);
     },
   },
 
